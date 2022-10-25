@@ -62,6 +62,10 @@ func (l *logger) With(options ...Option) Logger {
 	}
 }
 
+func (l *logger) Unwrap() *Base {
+	return l.base
+}
+
 func (l *logger) Close() error {
 	return l.base.Sync()
 }

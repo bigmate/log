@@ -23,6 +23,7 @@ type Logger interface {
 	Fatal(message string, fields ...Field)
 
 	With(options ...Option) Logger
+	Unwrap() *Base
 }
 
 func Debugf(format string, args ...interface{}) {
